@@ -22,6 +22,8 @@ public class ImprimirListaInversa{
         ListaDeEnterosEnlazada lista = new ListaDeEnterosEnlazada();
         lista.comenzar();
 
+        
+
 
     }
 
