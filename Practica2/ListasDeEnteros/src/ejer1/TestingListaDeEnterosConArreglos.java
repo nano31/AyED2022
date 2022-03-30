@@ -26,5 +26,7 @@ public class TestingListaDeEnterosConArreglos {
 			System.out.println("Elemento "+i+": "+lista.elemento(i));
 			i++;
 		}
+
+		System.out.println("Hola");
 	}
 }
