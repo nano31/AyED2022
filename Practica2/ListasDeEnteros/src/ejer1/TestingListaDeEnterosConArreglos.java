@@ -10,8 +10,6 @@ public class TestingListaDeEnterosConArreglos {
 		posAct = 1;
 		ListaDeEnterosConArreglos lista = new ListaDeEnterosConArreglos() ;
 		
-		
-		
 		lista.comenzar();
 		
 		do {
@@ -26,7 +24,5 @@ public class TestingListaDeEnterosConArreglos {
 			System.out.println("Elemento "+i+": "+lista.elemento(i));
 			i++;
 		}
-
-		System.out.println("Hola");
 	}
 }
