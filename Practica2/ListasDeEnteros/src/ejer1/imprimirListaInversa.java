@@ -4,12 +4,12 @@ import tp02.ejercicio1.*;
 import java.util.Scanner;
 
 
-public class ImprimirListaInversa{
+public class imprimirListaInversa{
 
     public static void imprimirInverso(ListaDeEnterosEnlazada l, int cantEnLista){
         /**cantEnLista tendra la cantidad de elementos que posee la lista */
         if(cantEnLista > 0){
-            System.out.printl(l.elemento(cantEnLista));/**cantEnLista indica la pos donde se encuentra el elem a imprimir */
+            System.out.println(l.elemento(cantEnLista));/**cantEnLista indica la pos donde se encuentra el elem a imprimir */
             cantEnLista--;
             imprimirInverso(l, cantEnLista);
         }
@@ -26,7 +26,7 @@ public class ImprimirListaInversa{
         /**carga de la lista */
         int i = 1;
         do{
-            System.out.printl("Ingrese un nro: ");
+            System.out.println("Ingrese un nro: ");
             nro = in.nextInt();
             lista.agregarEn(nro,i);
             i++;
