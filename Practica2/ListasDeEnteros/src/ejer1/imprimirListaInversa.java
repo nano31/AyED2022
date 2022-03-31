@@ -8,7 +8,7 @@ public class ImprimirListaInversa{
 
     public static void imprimirInverso(ListaDeEnterosEnlazada l){
         int tam = l.tamanio();
-        if (!l.fin()){
+        if (!l.fin()){ /*tengo que controlar no llegar al prinipio de la lista, el caso base, es el nodo inicial*/
             l.elemento(tam);
             tam--;
             imprimirInverso(l);
