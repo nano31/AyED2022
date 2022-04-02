@@ -19,6 +19,14 @@ public class Test {
         devolverConReturn(nros, res);
         System.out.println("Maximo: "+res.getMax()+""
                 + "\nMinimo: "+res.getMin()+"\nPromedio: "+res.getPromedio());
+        
+        Resultados result = new Resultados();
+        devolverConParametro(nros, result);
+        System.out.println("Imprimo devolviendo con parametros: ");
+        System.out.println("Maximo: "+result.getMax());
+        System.out.println("Minimo: "+result.getMin());
+        System.out.println("Promedio: "+result.getPromedio());
+        
     }
     
     public static Resultados devolverConReturn(int[] nros, Resultados res){
@@ -39,7 +47,19 @@ public class Test {
         return res;
     }
     
-    public static void devolverConParametro(String cadena, int[] nros){
-        Resultados res = new Resultados();
+    public static void devolverConParametro(int[] nros,Resultados r){
+       r = new Resultados();
+       int min = 999, max = -1, suma = 0;
+       double prom = 0;
+       
+       for (int i = 0; i < nros.length; i++) {
+    	   if (nros[i] > max) {
+    		   r.setMax(max);
+    	   }if(nros[i] < min) {
+    		   r.setMin(min);
+    	   }
+    	   suma =+ nros[i];
+       }
+       r.setPromedio(suma/nros.length);
     }
 }

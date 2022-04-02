@@ -22,11 +22,8 @@ public class TestingListaDeEnterosEnlazada {
 			nro = in.nextInt();
 		}while(nro != 0);
 		
-		int i = 0;
-		while (!lista.fin()){
-			System.out.println("Elemento "+(i+1)+": "+ lista.proximo());
-			i++;
-		}
+		System.out.println(lista.proximo());
+
 	}
 
 }
