@@ -30,7 +30,7 @@ public class Sucesion{
         System.out.println("Ingrese un nro: ");
         nro = in.nextInt();
         
-        ListaDeEnterosEnlazada l = f.
+        ListaDeEnterosEnlazada l;
         
         calcularSucesion(nro);
     }
