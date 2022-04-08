@@ -6,16 +6,13 @@ public class Ejer4 {
 	
 	PilaGenerica<Character> pila = new PilaGenerica<Character>();
 	
-	public static char StringPop(StringBuffer str) {
+	public static Character StringPop(StringBuffer str) {
 		if (str.length() == 0) {
-			System.out.println("El string es vacio");
-		}else {
-
-			char c = str.charAt(0);
-			str.deleteCharAt(0);
-			return c ;
+			return Character.MIN_VALUE;
 		}
-		return str.charAt(0);
+		Character c = str.charAt(0);
+		str.deleteCharAt(0);
+		return c;
 	}
 	
 	public static boolean evaluar (char apertura, char cierre) {
@@ -36,6 +33,11 @@ public class Ejer4 {
 	}
 	
 	public boolean esBalanceado(StringBuffer str) {
+		
+		if (str.isEmpty()){
+			return true;
+		}
+		
 		boolean balanceado = true;
 		
 		while(balanceado) {
