@@ -47,13 +47,14 @@ public class balanceo {
                 elem = pila.desapilar();
                 if (!evaluar(elem, act)){
                     return false;
+                }
             }
         }
         if (cad.length() == 0){
             return true;
         }
         return true;
-    }   
+    }
     
     
     public static void main(String[] args){
