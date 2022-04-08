@@ -24,6 +24,19 @@ public class balanceo {
         }
     }
 
+    public static boolean evaluar (char apertura, char cierre) {
+		switch (apertura) {
+		case '[': return cierre == ']';
+			
+		case '(': return cierre == ')';
+			
+		case '{': return cierre == '}';
+			
+		default: return false;
+			
+		}
+	}
+
     public  boolean esBalanceado(String cad){
         char act, elem;
         for (int i = 0; i < cad.length(); i++ ){
@@ -32,8 +45,12 @@ public class balanceo {
                 pila.apilar(act);
             }else if (esDeCierre(act)){
                 elem = pila.desapilar();
-                
+                if (!evaluar(elem, act)){
+                    return false;
             }
+        }
+        if (cad.length() == 0){
+            return true;
         }
         return true;
     }   
