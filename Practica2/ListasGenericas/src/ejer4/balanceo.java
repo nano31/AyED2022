@@ -1,5 +1,7 @@
 package ejer4;
 
+import javax.sql.rowset.CachedRowSet;
+
 import tp02.ejercicio3.PilaGenerica;
 
 public class balanceo {
@@ -14,8 +16,25 @@ public class balanceo {
         }
     }
 
+    public static boolean esDeCierre(char c){
+        if ((c == '}') || (c == ']') || (c == ')')){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
-    public static boolean esBalanceado(String cad){
+    public  boolean esBalanceado(String cad){
+        char act, elem;
+        for (int i = 0; i < cad.length(); i++ ){
+            act = cad.charAt(i);
+            if (esApertura(act)){
+                pila.apilar(act);
+            }else if (esDeCierre(act)){
+                elem = pila.desapilar();
+                
+            }
+        }
         return true;
     }   
     
