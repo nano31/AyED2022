@@ -80,13 +80,53 @@ public class ArbolBinario<T> {
 	}
 
 	public int contarHojas() {
-		return 0;
+		int cantHojas = 0;
+		
+		//se debe consultar si el arbol es vacio, en caso de ser vacio retorno 1
+
+		if (this.esHoja){
+			cantHojas++;
+			return cantHojas;
+		}else{
+
+			//en caso de no ser vacio, se recorre el arbol de forma recursiva, contando
+			//la cantidad de hojas que tiene el mismo.
+
+			if (this.tieneHijoIzquierdo){
+				cantHojas += this.getHijoIzquierdo().contarHojas();
+			}
+
+			if(this.tieneHijoDerecho){
+				cantHojas += this.getHijoDerecho().contarHojas();
+			}
+
+		}
+
+		//devuelve la cantidad de hojas que posee el arbol
+		return cantHojas;
 	}
 	
 
     public ArbolBinario<T> espejo() {
-		
-		return null;
+		//utilizo una variable temporal o auxiliar para guardar el dato de 
+		//el hijo izquierdo, asi depues lo guardo en el hijo derecho
+
+		ArbolBinario<T> aux = this.getHijoIzquierdo();
+		this.agregarHijoIzquierdo(this.getHijoDerecho());
+		this.agregarHijoDerecho(aux);
+
+		//se recorre recursivamente el arbol invocando el proceso para ir formando el 
+		//arbol espejo
+
+		if(this.tieneHijoIzquierdo()){
+			this.getHijoIzquierdo().espejo();
+		}
+		if(this.tieneHijoDerecho()){
+			this.getHijoDerecho().espejo();
+		}
+
+
+		return this;
 	}
 
 
