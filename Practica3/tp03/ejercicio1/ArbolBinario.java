@@ -135,20 +135,27 @@ public class ArbolBinario<T> {
 		ColaGenerica<ArbolBinario<T>> cola = new ColaGenerica<ArbolBinario<T>>();
 		int nivel = 0;
 		
-		cola.encolar(this);
+		cola.encolar(this); 
 		cola.encolar(null);
-		while (!cola.esVacia()){
-			arbol = cola.desencolar();
-			if (arbol != null){
+
+		//la primera vez siempre entra al while, porque me estoy asegurando de que hay 
+		//algo en la cola
+		while (!cola.esVacia()){ //si cola = vacia --> false si cola != vacia --> true
+
+			arbol = cola.desencolar(); //desencola la raiz del arbol
+
+			if (arbol != null){ //entra al if si el arbol no esta vacio
+
 				if ((nivel >= n) && (nivel <= m)){
 					System.out.println(arbol.getDato());
 				}
 				if(arbol.tieneHijoIzquierdo()){
-					cola.encolar(arbol.getHijoIzquierdo());
+					cola.encolar(arbol.getHijoIzquierdo()); //encola el hijo izquierdo del arbol
 				}
 				if(arbol.tieneHijoDerecho()){
-					cola.encolar(arbol.getHijoDerecho());
+					cola.encolar(arbol.getHijoDerecho()); //encola el hijo derecho del arbol
 				}
+
 			}else if(!cola.esVacia()){
 				cola.encolar(null);
 				nivel++;
