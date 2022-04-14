@@ -10,6 +10,8 @@ public class TestingListaDeEnterosConArreglos {
 		posAct = 1;
 		ListaDeEnterosConArreglos lista = new ListaDeEnterosConArreglos() ;
 		
+		
+		
 		lista.comenzar();
 		
 		do {
