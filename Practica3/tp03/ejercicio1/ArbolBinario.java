@@ -131,7 +131,29 @@ public class ArbolBinario<T> {
 
 
 	public void entreNiveles(int n, int m){
+		ArbolBinario<T> arbol = null;
+		ColaGenerica<ArbolBinario<T>> cola = new ColaGenerica<ArbolBinario<T>>();
+		int nivel = 0;
 		
+		cola.encolar(this);
+		cola.encolar(null);
+		while (!cola.esVacia()){
+			arbol = cola.desencolar();
+			if (arbol != null){
+				if ((nivel >= n) && (nivel <= m)){
+					System.out.println(arbol.getDato());
+				}
+				if(arbol.tieneHijoIzquierdo()){
+					cola.encolar(arbol.getHijoIzquierdo());
+				}
+				if(arbol.tieneHijoDerecho()){
+					cola.encolar(arbol.getHijoDerecho());
+				}
+			}else if(!cola.esVacia()){
+				cola.encolar(null);
+				nivel++;
+			}
+		} 
 	}
 
 	
