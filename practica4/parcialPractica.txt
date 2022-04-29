@@ -1,0 +1,27 @@
+Public Lista todosLosCaminos(AG arbol)
+    ListaGenerica listaResultado = new ListaGenerica(); // lista que devuelve el resultado
+    ListaGenerica listaCaminoActual = new ListaGenerica(); // lista que devuelve el camino actual
+
+    todosLosCaminos(arbol, listaResultado, listaCaminoActual)
+    return lista;
+} 
+
+todosLosCaminos(arbol, resultado, caminoActual){
+    caminoActual.agregarFinal(arbol.getDato());
+    if (arbol.esHoja){ //caso base
+        if (caminoActual.tamanio() % 2 = 0){
+            resultado.agregar(caminoActual.clonar());
+        }
+    }
+    else{ //recursivo
+        ListaGenerica hijos = arbol.getHijos();
+        hijos.comenzar();
+        while (!hijos.fin()){ //debo iterar por la lista de hijos
+            //caminoActual.agregarFinal()
+            todosLosCaminos(hijos.proximo(), resultado, caminoActual);
+            //caminoActual.eliminarEn()
+        }
+    }
+    caminoActual.eliminarEn();
+}
+    
